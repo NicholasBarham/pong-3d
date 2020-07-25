@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using Pong;
-using UnityEngine;
-using UnityEngine.TestTools;
 
 namespace Tests
 {
