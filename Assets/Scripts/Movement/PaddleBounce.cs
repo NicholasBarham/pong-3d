@@ -1,28 +1,35 @@
 ﻿using UnityEngine;
 
-public class PaddleBounce : MonoBehaviour
+namespace Pong
 {
-    BoxCollider paddleCollider = null;
-
-    private void Awake()
+    public class PaddleBounce : MonoBehaviour
     {
-        paddleCollider = GetComponent<BoxCollider>();
-    }
+        BoxCollider paddleCollider = null;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        float pointX = collision.GetContact(0).point.x;
-        Vector3 localPositionOfContact = transform.InverseTransformPoint(pointX, 0f, 0f);
+        [SerializeField]
+        private ScriptableObject ballSpeed = null;
+        private IFloatGetter _ballSpeed = null;
 
-        Rigidbody ballRigidbody = collision.collider.attachedRigidbody;
+        private void Awake()
+        {
+            paddleCollider = GetComponent<BoxCollider>();
+            _ballSpeed = (IFloatGetter)ballSpeed;
+        }
 
-        Vector3 ballVelocity = ballRigidbody.velocity;
-        float ballSpeed = ballVelocity.magnitude;
+        private void OnCollisionEnter(Collision collision)
+        {
+            float pointX = collision.GetContact(0).point.x;
+            Vector3 localPositionOfContact = transform.InverseTransformPoint(pointX, 0f, 0f);
 
-        float paddleXExtent = paddleCollider.bounds.extents.x;
+            Rigidbody ballRigidbody = collision.collider.attachedRigidbody;
 
-        float xPercentage = (localPositionOfContact.x / paddleXExtent) - 1f;
+            Vector3 ballVelocity = ballRigidbody.velocity;
 
-        ballRigidbody.velocity = new Vector3(xPercentage, 0f, 1f) * ballSpeed;
+            float paddleXExtent = paddleCollider.bounds.extents.x;
+
+            float xPercentage = localPositionOfContact.x / paddleXExtent - 1f;
+
+            ballRigidbody.velocity = new Vector3(xPercentage, 0f, ballVelocity.normalized.z) * _ballSpeed.Value;
+        }
     }
 }

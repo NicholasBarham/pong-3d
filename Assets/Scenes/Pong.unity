@@ -205,7 +205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25368
+  m_Name: pb_Mesh17824
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -369,7 +369,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25396
+  m_Name: pb_Mesh17852
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -567,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440801269}
   - component: {fileID: 440801268}
+  - component: {fileID: 440801270}
   m_Layer: 0
   m_Name: Input Getters
   m_TagString: Untagged
@@ -602,6 +603,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &440801270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440801267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a923bf2b4e70f643808cd828ca97d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 1117976709}
+  input: {fileID: 11400000, guid: 75e3388897b6f8e4598387f7f243668e, type: 2}
 --- !u!1 &557902512
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb1aa1f5720d2419e89da0d94bb875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballSpeed: {fileID: 11400000, guid: ef8a1fa8643980747bec3397c4c15052, type: 2}
 --- !u!1 &575373475
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575373477}
   - component: {fileID: 575373476}
+  - component: {fileID: 575373478}
   m_Layer: 0
   m_Name: Input Setters
   m_TagString: Untagged
@@ -971,6 +988,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575373478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575373475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955426505a0efbf4fb865b1e615a26ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paddle: {fileID: 1117976710}
+  paddleCollider: {fileID: 1564943417}
+  ballTransform: {fileID: 1625765249}
+  ballRB: {fileID: 1625765250}
+  floatSetter: {fileID: 11400000, guid: 75e3388897b6f8e4598387f7f243668e, type: 2}
+  inputSensitivity: {fileID: 11400000, guid: 720ec69c078076f42b99e975f3023826, type: 2}
 --- !u!1 &615155539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117976710}
+  - component: {fileID: 1117976711}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1722,13 +1758,27 @@ Transform:
   m_Father: {fileID: 1041874578}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117976711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117976709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99617ece3c73be4f8569c88e45e5727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLimit: {fileID: 646075635}
+  rightLimit: {fileID: 1997918358}
 --- !u!43 &1305612770
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25408
+  m_Name: pb_Mesh17864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1892,7 +1942,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25384
+  m_Name: pb_Mesh17840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2721,6 +2771,7 @@ GameObject:
   - component: {fileID: 1564943419}
   - component: {fileID: 1564943418}
   - component: {fileID: 1564943417}
+  - component: {fileID: 1564943422}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -3019,6 +3070,19 @@ Transform:
   m_Father: {fileID: 1117976710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &1564943422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564943416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2fb1aa1f5720d2419e89da0d94bb875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballSpeed: {fileID: 11400000, guid: ef8a1fa8643980747bec3397c4c15052, type: 2}
 --- !u!1 &1625765244
 GameObject:
   m_ObjectHideFlags: 0
@@ -37085,8 +37149,8 @@ Rigidbody:
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 4
+  m_Interpolate: 1
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!114 &1625765251
 MonoBehaviour:
@@ -37106,7 +37170,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25338
+  m_Name: pb_Mesh17788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37333,7 +37397,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25302
+  m_Name: pb_Mesh17746
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
