@@ -8,8 +8,6 @@ namespace Pong
         [SerializeField]
         private Transform paddle = null;
         [SerializeField]
-        private Collider paddleCollider = null;
-        [SerializeField]
         private Transform ballTransform = null;
         [SerializeField]
         private Rigidbody ballRB = null;
