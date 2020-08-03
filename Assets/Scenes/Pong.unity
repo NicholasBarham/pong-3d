@@ -654,7 +654,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle: {fileID: 85711556}
-  input: {fileID: 11400000, guid: 63d85c217bf68004885fe653b241eb4f, type: 2}
+  input:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: 3cce38cb34bbf7848917eda9e9cbb430, type: 2}
 --- !u!4 &440801269
 Transform:
   m_ObjectHideFlags: 0
@@ -676,13 +679,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440801267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a923bf2b4e70f643808cd828ca97d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   paddle: {fileID: 1117976709}
-  input: {fileID: 11400000, guid: 75e3388897b6f8e4598387f7f243668e, type: 2}
+  input:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: 5fe393cd1ade93949b65650582f0a76d, type: 2}
 --- !u!1 &557902512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,8 +1044,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebd321cada364c4998e85363a8f5056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatSetter: {fileID: 11400000, guid: 63d85c217bf68004885fe653b241eb4f, type: 2}
-  inputSensitivity: {fileID: 11400000, guid: 8f1d7a3c05b773d4e819a915d8328ea1, type: 2}
+  inputVariable: {fileID: 11400000, guid: 3cce38cb34bbf7848917eda9e9cbb430, type: 2}
+  inputSensitivity:
+    useConstant: 0
+    constantValue: 2.5
+    variableValue: {fileID: 11400000, guid: 5fe393cd1ade93949b65650582f0a76d, type: 2}
 --- !u!4 &575373477
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2075,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16988
+  m_Name: pb_Mesh18984
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3520,7 +3529,6 @@ GameObject:
   - component: {fileID: 1625765245}
   - component: {fileID: 1625765250}
   - component: {fileID: 1625765251}
-  - component: {fileID: 1625765252}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -37587,22 +37595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5c54fcfbe18f3419f2446dba3032f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1625765252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625765244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7e1b85cd928cb40a1b412d521c7875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: 9da9699166baff54f8de50ae28f53684, type: 2}
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!43 &1760181674
 Mesh:
   m_ObjectHideFlags: 0
@@ -37836,7 +37828,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17576
+  m_Name: pb_Mesh18830
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

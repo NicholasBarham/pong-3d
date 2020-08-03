@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Util.Variables;
 
 namespace Pong
 {
@@ -9,18 +10,16 @@ namespace Pong
         private IMove _paddle = null;
 
         [SerializeField]
-        private ScriptableObject input = null;
-        private IFloatGetter _input = null;
+        private FloatReference input = null;
 
         private void Awake()
         {
-            _input = (IFloatGetter)input;
             _paddle = paddle.GetComponent<IMove>();
         }
 
         private void Update()
         {
-            _paddle.Move(_input.Value);
+            _paddle?.Move(input.Value);
         }
     }
 }
