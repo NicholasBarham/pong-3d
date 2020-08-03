@@ -679,7 +679,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440801267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a923bf2b4e70f643808cd828ca97d63, type: 3}
   m_Name: 
@@ -688,7 +688,7 @@ MonoBehaviour:
   input:
     useConstant: 0
     constantValue: 0
-    variableValue: {fileID: 11400000, guid: 5fe393cd1ade93949b65650582f0a76d, type: 2}
+    variableValue: {fileID: 11400000, guid: 5f7fcf236e73d2e46a814675298bacf2, type: 2}
 --- !u!1 &456662378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb1aa1f5720d2419e89da0d94bb875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: {fileID: 11400000, guid: ef8a1fa8643980747bec3397c4c15052, type: 2}
+  ballSpeed:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: c1af9405998052b498ec24c812eb8d30, type: 2}
 --- !u!1 &575373475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,8 +1201,11 @@ MonoBehaviour:
   paddle: {fileID: 1117976710}
   ballTransform: {fileID: 1625765249}
   ballRB: {fileID: 1625765250}
-  floatSetter: {fileID: 11400000, guid: 75e3388897b6f8e4598387f7f243668e, type: 2}
-  inputSensitivity: {fileID: 11400000, guid: 720ec69c078076f42b99e975f3023826, type: 2}
+  movementInput: {fileID: 11400000, guid: 5f7fcf236e73d2e46a814675298bacf2, type: 2}
+  inputSensitivity:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: abfb7332c58e63e47a7145989d4afe5c, type: 2}
 --- !u!1 &615155539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,7 +3663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fb1aa1f5720d2419e89da0d94bb875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: {fileID: 11400000, guid: ef8a1fa8643980747bec3397c4c15052, type: 2}
+  ballSpeed:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: c1af9405998052b498ec24c812eb8d30, type: 2}
 --- !u!1 &1568502465
 GameObject:
   m_ObjectHideFlags: 0

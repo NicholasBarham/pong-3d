@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Util.Variables;
 
 namespace Pong
 {
@@ -12,18 +13,10 @@ namespace Pong
         private Rigidbody ballRB = null;
 
         [SerializeField]
-        private ScriptableObject floatSetter = null;
-        private IFloatSetter _floatSetter = null;
+        private FloatVariable movementInput = null;
 
         [SerializeField]
-        private ScriptableObject inputSensitivity = null;
-        private IFloatGetter _inputSensitivity = null;
-
-        private void Awake()
-        {
-            _floatSetter = (IFloatSetter)floatSetter;
-            _inputSensitivity = (IFloatGetter)inputSensitivity;
-        }
+        private FloatReference inputSensitivity = null;
 
         private void Update()
         {
@@ -34,7 +27,7 @@ namespace Pong
         {
             if (ballRB.velocity.z <= 0f)
             {
-                _floatSetter.Value = 0f;
+                movementInput.Value = 0f;
                 return;
             }
 
@@ -42,9 +35,9 @@ namespace Pong
             float paddleX = paddle.position.x;
 
             if (paddleX < ballX)
-                _floatSetter.Value = _inputSensitivity.Value;
+                movementInput.Value = inputSensitivity.Value;
             else if (paddleX > ballX)
-                _floatSetter.Value = -_inputSensitivity.Value;
+                movementInput.Value = -inputSensitivity.Value;
         }
     }
 }
