@@ -46,6 +46,9 @@ namespace Pong
                 CurrentCount++;
         }
 
-        public void Reset() => CurrentCount = 0;
+        public void Reset()
+        {
+            CurrentCount = 0;
+        }
     }
 }

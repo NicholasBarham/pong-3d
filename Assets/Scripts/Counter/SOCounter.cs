@@ -30,6 +30,11 @@ namespace Pong
             Counter = new Counter(_maxScore.Value);
         }
 
+        public void ResetCounter()
+        {
+            Counter.Reset();
+        }
+
         private void Win()
         {
             OnWin?.Invoke();

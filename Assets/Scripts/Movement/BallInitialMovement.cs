@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class BallInitialMovement : MonoBehaviour
+namespace Pong
 {
-    private Rigidbody rb;
-
-    void Start()
+    public class BallInitialMovement : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.forward * -5f;
+        private Rigidbody rb;
+
+        public void FireBall()
+        {
+            rb = GetComponent<Rigidbody>();
+            rb.velocity = Vector3.forward * -5f;
+        }
     }
 }
