@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
+using Util.GameEvents;
+using Util.Variables;
 
 namespace Pong
 {
@@ -9,13 +10,12 @@ namespace Pong
         public ICounter Counter { get; private set; }
 
         [SerializeField]
-        private ScriptableObject maxScore = null;
-        private IIntGetter _maxScore = null;
+        private IntReference maxScore = null;
 
-        [HideInInspector]
-        public UnityEvent OnWin;
-        [HideInInspector]
-        public IntUnityEvent OnScoreChanged;
+        [SerializeField]
+        private VoidEvent WinEvent = null;
+        [SerializeField]
+        private IntEvent OnScoreChangedEvent = null;
 
         private void OnEnable()
         {
@@ -26,24 +26,14 @@ namespace Pong
 
         private void InitialiseVariables()
         {
-            _maxScore = (IIntGetter)maxScore;
-            Counter = new Counter(_maxScore.Value);
+            Counter = new Counter(maxScore.Value);
         }
 
-        public void ResetCounter()
-        {
-            Counter.Reset();
-        }
+        public void ResetCounter() => Counter.Reset();
 
-        private void Win()
-        {
-            OnWin?.Invoke();
-        }
+        private void Win() => WinEvent?.Raise();
 
-        private void ScoreChanged(int newScore)
-        {
-            OnScoreChanged?.Invoke(newScore);
-        }
+        private void ScoreChanged(int newScore) => OnScoreChangedEvent?.Raise(newScore);
 
         private void OnDisable()
         {

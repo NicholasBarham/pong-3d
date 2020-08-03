@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe4509cdb3d4644aa9cc16ecfcdeb51, type: 3}
   m_Name: Player Score
   m_EditorClassIdentifier: 
-  maxScore: {fileID: 11400000, guid: d10c016c25d7da946a95e4b26b93ee36, type: 2}
-  OnWin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnScoreChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  maxScore:
+    useConstant: 0
+    constantValue: 0
+    variableValue: {fileID: 11400000, guid: 62db07163a9012641b4f8505f28b41ba, type: 2}
+  WinEvent: {fileID: 11400000, guid: 5a9c929f158672046b6b12b16e6bbbab, type: 2}
+  OnScoreChangedEvent: {fileID: 11400000, guid: 0f877ba60ee706f47a7a27174d3e04c5, type: 2}
