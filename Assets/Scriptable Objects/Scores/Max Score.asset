@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8301c1113ffce4194b7deddae70a96, type: 3}
+  m_Script: {fileID: 11500000, guid: b1d0645ee61a15c4795b815a2ca4fd37, type: 3}
   m_Name: Max Score
   m_EditorClassIdentifier: 
-  _value: 5
+  InitValue: 5

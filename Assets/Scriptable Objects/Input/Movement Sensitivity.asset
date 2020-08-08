@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22c376ae81b0c04a8cea1d0336cac5c, type: 3}
   m_Name: Movement Sensitivity
   m_EditorClassIdentifier: 
-  InitValue: 5
+  InitValue: 4

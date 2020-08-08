@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 6a6c803a8749af84e8732445ac24ed1d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OnGoalDelayComplete: {fileID: 11400000, guid: c21124d98927d164891d90126a0dd3b4, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,28 +8,15 @@ namespace Pong
         [SerializeField]
         private TextMeshProUGUI uIText = null;
 
-        [SerializeField]
-        private SOCounter score = null;
-
         private void Awake()
         {
-            if(score != null)
-                NumberToText(score.Counter.CurrentCount);
+            if (uIText == null)
+                uIText = GetComponent<TextMeshProUGUI>();
         }
 
-        private void OnEnable()
-        {
-            score?.OnScoreChanged.AddListener(NumberToText);
-        }
-
-        public void NumberToText(int number)
+        public void ScoreToText(int number)
         {
             uIText?.SetText(number.ToString());
-        }
-
-        private void OnDisable()
-        {
-            score?.OnScoreChanged.RemoveListener(NumberToText);
         }
     }
 }

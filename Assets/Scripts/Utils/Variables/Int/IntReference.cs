@@ -7,6 +7,6 @@
         public int constantValue;
         public IntVariable variableValue;
 
-        public float Value => useConstant ? constantValue : variableValue.Value;
+        public int Value => useConstant ? constantValue : variableValue.Value;
     }
 }
