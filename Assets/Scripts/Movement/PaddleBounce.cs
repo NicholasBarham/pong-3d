@@ -18,6 +18,7 @@ namespace Pong
         private void OnCollisionEnter(Collision collision)
         {
             float pointX = collision.GetContact(0).point.x;
+
             Vector3 localPositionOfContact = transform.InverseTransformPoint(pointX, 0f, 0f);
 
             Rigidbody ballRigidbody = collision.collider.attachedRigidbody;

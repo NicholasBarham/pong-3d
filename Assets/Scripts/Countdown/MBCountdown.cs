@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Util.GameEvents;
+using Util.Variables;
 
 namespace Pong
 {
@@ -21,9 +22,13 @@ namespace Pong
 
         public bool IsComplete => _countdown.IsComplete;
 
+        [SerializeField]
+        private FloatReference countdownTime = null;
+
         private void Awake()
         {
-            _countdown = new Countdown(3f);
+            if(countdownTime != null)
+                _countdown = new Countdown(countdownTime.Value);
         }
 
         private void OnEnable()
@@ -46,7 +51,7 @@ namespace Pong
         {
             while (!_countdown.IsComplete)
             {
-                _countdown.Tick(Time.deltaTime);
+                _countdown?.Tick(Time.deltaTime);
                 yield return null;
             }
         }

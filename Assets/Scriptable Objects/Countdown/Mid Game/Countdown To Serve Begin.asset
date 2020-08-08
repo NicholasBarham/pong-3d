@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7011be85e9a7c94789d48578dcf70d4, type: 3}
-  m_Name: Player Wins
+  m_Name: Countdown To Serve Begin
   m_EditorClassIdentifier: 

@@ -19,8 +19,10 @@ namespace Pong
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Ball"))
+            if (other.CompareTag("MainBall"))
+            {
                 Score();
+            }
         }
 
         public void Score() => _goal.Score();
