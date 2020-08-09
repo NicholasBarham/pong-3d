@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 
-public interface IBallVelocity
+namespace Pong
 {
-    void SetVelocity(Vector3 velocity);
+    public interface IBallVelocity
+    {
+        Vector3 LastGivenVelocity { get; }
+        void SetVelocity(Vector3 velocity);
+    }
 }
