@@ -5,16 +5,14 @@ namespace Pong
     public class PaddleMovement : MonoBehaviour, IMove
     {
         [SerializeField]
-        private Transform leftLimit = null;
+        private Rigidbody paddleRigidbody;
 
-        [SerializeField]
-        private Transform rightLimit = null;
-
-        public void Move(float input)
+        private void Awake()
         {
-            Vector3 currentPos = transform.position;
-            currentPos.x = Mathf.Clamp(currentPos.x + input * Time.deltaTime, leftLimit.position.x, rightLimit.position.x);
-            transform.position = currentPos;
+            if (paddleRigidbody == null)
+                paddleRigidbody = GetComponent<Rigidbody>();
         }
+
+        public void Move(float input) => paddleRigidbody.velocity = new Vector2(input, 0f);
     }
 }

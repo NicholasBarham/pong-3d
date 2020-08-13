@@ -17,19 +17,36 @@ namespace Pong
 
         private void OnCollisionEnter(Collision collision)
         {
+            IBallVelocity ballVelocity = collision.gameObject.GetComponent<IBallVelocity>();
+
+            if (ballVelocity == null)
+                return;
+
             float pointX = collision.GetContact(0).point.x;
 
-            Vector3 localPositionOfContact = transform.InverseTransformPoint(pointX, 0f, 0f);
+            CalculateBounceVelocity(ballVelocity, pointX);            
+        }
 
-            Rigidbody ballRigidbody = collision.collider.attachedRigidbody;
+        private void CalculateBounceVelocity(IBallVelocity ballVelocity, float collisionPointX)
+        {
+            float paddleCenterX = paddleCollider.bounds.center.x;
 
-            Vector3 ballVelocity = ballRigidbody.velocity;
+            float collisionDistanceToCenter = collisionPointX - paddleCenterX;
 
-            float paddleXExtent = paddleCollider.bounds.extents.x;
+            float xAngleStrength = collisionDistanceToCenter / paddleCollider.bounds.extents.x;
+            xAngleStrength = Mathf.Clamp(xAngleStrength, -1f, 1f);
 
-            float xPercentage = localPositionOfContact.x / paddleXExtent - 1f;
+            float xVelocity = CreateXVelocity(ballVelocity.LastGivenVelocity.x, xAngleStrength);
 
-            ballRigidbody.velocity = new Vector3(xPercentage, 0f, ballVelocity.normalized.z) * ballSpeed.Value;
+            Vector3 newBallVelocity = new Vector3(xVelocity, ballVelocity.LastGivenVelocity.y, ballVelocity.LastGivenVelocity.z * -1f);
+
+            ballVelocity.SetVelocity(newBallVelocity);
+        }
+
+        private float CreateXVelocity(float lastGivenXVelocity, float xVelocityStrength)
+        {
+            float addedXVelocity = lastGivenXVelocity + (xVelocityStrength * ballSpeed.Value);
+            return Mathf.Clamp(addedXVelocity, -ballSpeed.Value, ballSpeed.Value);
         }
     }
 }
