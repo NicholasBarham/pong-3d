@@ -567,7 +567,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19792
+  m_Name: pb_Mesh19884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1544,6 +1544,7 @@ MonoBehaviour:
     useConstant: 0
     constantValue: 0
     variableValue: {fileID: 11400000, guid: c1af9405998052b498ec24c812eb8d30, type: 2}
+  InduceCameraShake: {fileID: 11400000, guid: 0a67f23b71a59fa449987d753624a442, type: 2}
 --- !u!114 &557902519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2047,6 +2048,7 @@ GameObject:
   - component: {fileID: 759290460}
   - component: {fileID: 759290463}
   - component: {fileID: 759290464}
+  - component: {fileID: 759290465}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2112,11 +2114,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759290459}
-  m_LocalRotation: {x: 0.16728756, y: -0, z: -0, w: 0.9859082}
-  m_LocalPosition: {x: 4, y: 2.87, z: -22.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1971820165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.26, y: 0, z: 0}
 --- !u!114 &759290463
@@ -2165,6 +2167,26 @@ MonoBehaviour:
   mainPlayerPaddle: {fileID: 557902517}
   mainPlayerCentre: {fileID: 48891803}
   cameraSlowMultiplier: 0.1
+--- !u!114 &759290465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759290459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28fe6f2b63841a49bc311c9c00c7f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezeTranslation: 1
+  maximumTranslationShake: {x: 1, y: 1, z: 1}
+  freezeRotation: 0
+  maximumAngularShake: {x: 15, y: 15, z: 15}
+  frequency: 25
+  traumaExponent: 2
+  recoverySpeed: 1
+  trauma: {fileID: 11400000, guid: 795d8126738d6964ea490560acd7f346, type: 2}
 --- !u!1 &813110913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3802,7 +3824,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19826
+  m_Name: pb_Mesh19918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5410,6 +5432,7 @@ MonoBehaviour:
     useConstant: 0
     constantValue: 0
     variableValue: {fileID: 11400000, guid: c1af9405998052b498ec24c812eb8d30, type: 2}
+  InduceCameraShake: {fileID: 0}
 --- !u!1 &1568502465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5727,6 +5750,7 @@ GameObject:
   - component: {fileID: 1625765251}
   - component: {fileID: 1625765252}
   - component: {fileID: 1625765253}
+  - component: {fileID: 1625765254}
   m_Layer: 9
   m_Name: Ball
   m_TagString: MainBall
@@ -39823,6 +39847,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballRigidbody: {fileID: 1625765250}
+--- !u!114 &1625765254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625765244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8dd4deabfec7a4ba23463a7fed7c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballWeight: 0.5
 --- !u!1 &1694364646
 GameObject:
   m_ObjectHideFlags: 0
@@ -40375,13 +40412,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969779121}
   m_CullTransparentMesh: 0
+--- !u!1 &1971820163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971820165}
+  - component: {fileID: 1971820164}
+  m_Layer: 0
+  m_Name: Camera Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971820164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971820163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc86abaedfec764593b27a5b52a5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 0a67f23b71a59fa449987d753624a442, type: 2}
+  _unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 759290465}
+        m_TargetAssemblyTypeName: CameraShake, Pong
+        m_MethodName: InduceStress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1971820165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971820163}
+  m_LocalRotation: {x: 0.16728756, y: -0, z: -0, w: 0.9859082}
+  m_LocalPosition: {x: 4, y: 2.87, z: -22.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 759290462}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2004264313
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19556
+  m_Name: pb_Mesh19636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

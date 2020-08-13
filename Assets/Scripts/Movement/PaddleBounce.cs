@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Util.GameEvents;
 using Util.Variables;
 
 namespace Pong
@@ -10,12 +11,22 @@ namespace Pong
         [SerializeField]
         private FloatReference ballSpeed = null;
 
+        [SerializeField]
+        private FloatEvent InduceCameraShake = null;
+
         private void Awake()
         {
             paddleCollider = GetComponent<BoxCollider>();
         }
 
         private void OnCollisionEnter(Collision collision)
+        {
+            BounceBall(collision);
+
+            TriggerCameraShake(collision);
+        }
+
+        private void BounceBall(Collision collision)
         {
             IBallVelocity ballVelocity = collision.gameObject.GetComponent<IBallVelocity>();
 
@@ -24,7 +35,7 @@ namespace Pong
 
             float pointX = collision.GetContact(0).point.x;
 
-            CalculateBounceVelocity(ballVelocity, pointX);            
+            CalculateBounceVelocity(ballVelocity, pointX);
         }
 
         private void CalculateBounceVelocity(IBallVelocity ballVelocity, float collisionPointX)
@@ -47,6 +58,14 @@ namespace Pong
         {
             float addedXVelocity = lastGivenXVelocity + (xVelocityStrength * ballSpeed.Value);
             return Mathf.Clamp(addedXVelocity, -ballSpeed.Value, ballSpeed.Value);
+        }
+
+        private void TriggerCameraShake(Collision collision)
+        {
+            IBallWeight ballWeight = collision.gameObject.GetComponent<IBallWeight>();
+            
+            if(ballWeight != null)
+                InduceCameraShake?.Raise(ballWeight.GetWeight());
         }
     }
 }
